@@ -14,7 +14,7 @@ const TaskList = () => {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/api/tasks/');
+        const response = await axios.get('http://127.0.0.1:8000/api/task/');
         setTasks(response.data);
       } catch (error) {
         console.error('Error fetching tasks:', error);
