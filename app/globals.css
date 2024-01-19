@@ -6,9 +6,10 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  font-family: 'Lora', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
@@ -24,4 +25,59 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+
+/* Add these styles to your CSS or Tailwind styles */
+.react-calendar__tile--active {
+  background-color: #38a169; /* Green background color for active days */
+  color: #ffffff; /* White text color */
+  border-radius: 50%; /* Make the tile circular */
+}
+
+small span {
+  padding: 4px 8px;
+  border-radius: 8px;
+  background-color: rgb(158, 163, 172);
+  font-size: 0.625rem;
+}
+
+.streak-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border-bottom: 0px solid rgb(116, 116, 116);
+  background-color: rgba(221, 221, 221, 0.664);
+  cursor: not-allowed;
+  
+  /* background-image: url('../public/streak-btn.svg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: border 0.2s ease;
+}
+
+.streak-btn.include {  
+  border-bottom: 6px solid darkgoldenrod;
+  background-color: yellow;
+  cursor: pointer;
+}
+
+.streak-btn.notdue {  
+  /* border-bottom: 0px solid rgb(116, 116, 116); */
+  background-color: rgb(167, 167, 167);
+  border-bottom-width: 6px;
+  cursor: default;
+}
+
+.streak-btn.elapsed {  
+  border-bottom: 6px solid rgb(2, 141, 48);
+  background-color: rgb(0, 255, 85);
+  cursor: default;
+}
+
+.streak-btn.include:active {
+  border-bottom-width: 0px;
 }
