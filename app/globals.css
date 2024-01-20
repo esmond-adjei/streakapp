@@ -67,7 +67,8 @@ small span {
 
 .streak-btn.notdue {  
   /* border-bottom: 0px solid rgb(116, 116, 116); */
-  background-color: rgb(167, 167, 167);
+  background-color: rgb(59 130 246);
+  border-bottom: 6px solid rgb(29 78 216);
   border-bottom-width: 6px;
   cursor: default;
 }

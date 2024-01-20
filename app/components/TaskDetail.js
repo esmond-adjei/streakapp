@@ -24,7 +24,7 @@ const TaskDetail = ({ taskId }) => {
 
   return (
     <div className="max-w-xl mx-auto p-4">
-      <h2 className="text-3xl font-bold mb-4">{taskDetails.name}</h2>
+      <h2 className="text-3xl text-blue-500 font-bold mb-4">{taskDetails.name}</h2>
       <p className="text-gray-600">{taskDetails.description}</p><br />
       <small>
         This task started on <span>{taskDetails.start_date}</span> at <span>{taskDetails.start_time}</span>
