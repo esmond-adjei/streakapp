@@ -63,6 +63,7 @@ small span {
   border-bottom: 6px solid darkgoldenrod;
   background-color: yellow;
   cursor: pointer;
+  animation: beacon 2s infinite;
 }
 
 .streak-btn.notdue {  
@@ -81,4 +82,14 @@ small span {
 
 .streak-btn.include:active {
   border-bottom-width: 0px;
+}
+
+
+@keyframes beacon {
+  0%, 100% {
+    outline: 0 solid transparent;
+  }
+  30% {
+    outline: 7px solid rgba(214, 53, 13, 0.37);
+  }  
 }
