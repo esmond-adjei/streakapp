@@ -18,7 +18,8 @@ const TaskList = () => {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/api/task/');
+        const APIURL = process.env.NEXT_PUBLIC_API_URL;
+        const response = await axios.get(`${APIURL}/task/`);
         setTasks(response.data);
       } catch (error) {
         console.error('Error fetching tasks:', error);

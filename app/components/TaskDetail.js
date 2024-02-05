@@ -8,7 +8,8 @@ const TaskDetail = ({ taskId }) => {
   useEffect(() => {
     const fetchTaskDetails = async () => {
       try {
-        const response = await axios.get(`http://127.0.0.1:8000/api/task/${taskId}/`);
+        const APIURL = process.env.NEXT_PUBLIC_API_URL;
+        const response = await axios.get(`${APIURL}/task/${taskId}/`);
         setTaskDetails(response.data);
       } catch (error) {
         console.error('Error fetching task details:', error);
