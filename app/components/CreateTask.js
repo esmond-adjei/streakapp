@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createTask } from '../api';
 
 const inputStyles = "ml-2 border-transparent focus-visible:outline-transparent ";
 
@@ -10,7 +11,6 @@ const CreateTask = ({ closeWindow = undefined }) => {
         durationPerDay: '',
         startDate: '',
         startTime: '',
-        endDate: '',
         activeDays: '',
     }
     const [formData, setFormData] = useState(defaultData);
@@ -25,11 +25,24 @@ const CreateTask = ({ closeWindow = undefined }) => {
     };
 
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Add your logic to handle form submission here
         console.log(formData);
         setFormData(defaultData);
+        try {
+            const response = await createTask({
+                name: formData.taskName,
+                description: formData.taskDescription,
+                completion_period: formData.completionPeriod,
+                duration_per_day: formData.durationPerDay,
+                start_date: formData.startDate,
+                start_time: formData.startTime,
+                active_days: formData.activeDays.split(',').map(day => day.trim().toLowerCase())
+            });
+            console.log(">> success!", response);
+        } catch (error) {
+            console.log(">> Error occurred while creating goal", error);
+        }
     };
 
     return (

@@ -21,21 +21,16 @@ const TaskList = () => {
   const [enableCreateTask, setEnableCreateTask] = useState(false);
 
   useEffect(() => {
-    const fetchTasks = async () => {
-      try {
-        const tasklist = await getTaskList();
-        console.log(">> taskslist: ", tasklist);
-        setTasks(tasklist);
-      } catch (error) {
-        console.error(error);
-      }
+    const fetchTaskList = async () => {
+      const tasklist = await getTaskList();
+      setTasks(tasklist);
     }
 
-    fetchTasks();
+    fetchTaskList();
   }, []);
 
   if (!tasks) {
-    return <p className="text-center mt-4"><Loader/></p>;
+    return <div className="flex items-center justify-center w-full h-full"><Loader /></div>
   }
 
   return (

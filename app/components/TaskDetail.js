@@ -1,20 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import StreakCalendar from './streakCalendar';
+import StreakCalendar from './StreakCalendar';
 import Loader from './loader';
+import { getTask } from '../api';
 
 const TaskDetail = ({ taskId }) => {
   const [taskDetails, setTaskDetails] = useState(null);
 
   useEffect(() => {
     const fetchTaskDetails = async () => {
-      try {
-        const APIURL = process.env.NEXT_PUBLIC_API_URL;
-        const response = await axios.get(`${APIURL}/task/${taskId}/`);
-        setTaskDetails(response.data);
-      } catch (error) {
-        console.error('Error fetching task details:', error);
-      }
+        const task = await getTask( taskId );
+        setTaskDetails(task);
     };
 
     fetchTaskDetails();
