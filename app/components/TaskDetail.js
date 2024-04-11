@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import StreakCalendar from './streakCalendar';
+import Loader from './loader';
 
 const TaskDetail = ({ taskId }) => {
   const [taskDetails, setTaskDetails] = useState(null);
@@ -20,7 +21,7 @@ const TaskDetail = ({ taskId }) => {
   }, [taskId]);
 
   if (!taskDetails) {
-    return <p className="text-center mt-4">Loading...</p>;
+    return <div className="flex items-center justify-center w-full h-full"><Loader/></div>
   }
 
   return (
