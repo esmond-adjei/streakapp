@@ -9,7 +9,7 @@
   font-family: 'Lora', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
@@ -25,7 +25,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-} */
+}
 
 /* Add these styles to your CSS or Tailwind styles */
 .react-calendar__tile--active {
@@ -84,6 +84,9 @@ small span {
   border-bottom-width: 0px;
 }
 
+.slideIn {
+  animation: slidebar 2s ease infinite;
+}
 
 @keyframes beacon {
   0%, 100% {
@@ -92,4 +95,13 @@ small span {
   30% {
     outline: 7px solid rgba(214, 53, 13, 0.37);
   }  
+}
+
+@keyframes slidebar {
+  0%, 100% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(200%);
+  }
 }

@@ -6,7 +6,7 @@ export default function TaskLayout({ children }) {
       <div className="bg-blue-100 md:h-screen md:w-1/3 overflow-y-auto">
         <TaskList />
       </div>
-      <div className="bg-white p-4 md:h-screen w-full overflow-y-auto">
+      <div className="bg-white md:h-screen w-full overflow-y-auto">
         {children}
       </div>
     </main>

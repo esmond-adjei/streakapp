@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import clsx from 'clsx';
-import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBullseye, faPlus } from '@fortawesome/free-solid-svg-icons';
 
@@ -30,7 +29,7 @@ const TaskList = () => {
   }, []);
 
   if (!tasks) {
-    return <div className="flex items-center justify-center w-full h-full"><Loader /></div>
+    return <div className=""><Loader type='bar'/></div>
   }
 
   return (
